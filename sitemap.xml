@@ -14,7 +14,7 @@
 
   <!-- Halaman Katalog Paket Outbound -->
   <url>
-    <loc>https://outboundpantai.web.id/paket.html</loc>
+    <loc>https://outboundpantai.web.id/paket</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,28 +22,28 @@
 
   <!-- Halaman Detail Layanan / Paket Outbound Spesifik -->
   <url>
-    <loc>https://outboundpantai.web.id/paket-corporate-capacity-building.html</loc>
+    <loc>https://outboundpantai.web.id/paket-corporate-capacity-building</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/paket-family-gathering-kondang-merak.html</loc>
+    <loc>https://outboundpantai.web.id/paket-family-gathering-kondang-merak</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/paket-ldks-outbound-sekolah.html</loc>
+    <loc>https://outboundpantai.web.id/paket-ldks-outbound-sekolah</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/paket-custom-outbound-event.html</loc>
+    <loc>https://outboundpantai.web.id/paket-custom-outbound-event</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -51,14 +51,14 @@
 
   <!-- Halaman Profil & Galeri -->
   <url>
-    <loc>https://outboundpantai.web.id/tentang-kami.html</loc>
+    <loc>https://outboundpantai.web.id/tentang-kami</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/galeri.html</loc>
+    <loc>https://outboundpantai.web.id/galeri</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -66,7 +66,7 @@
 
   <!-- Halaman Kontak / Reservasi -->
   <url>
-    <loc>https://outboundpantai.web.id/contact.html</loc>
+    <loc>https://outboundpantai.web.id/contact</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -74,7 +74,7 @@
 
   <!-- Halaman Blog / Index Artikel -->
   <url>
-    <loc>https://outboundpantai.web.id/blog.html</loc>
+    <loc>https://outboundpantai.web.id/blog</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -82,28 +82,28 @@
 
   <!-- Artikel Blog Edukasi & Informasi -->
   <url>
-    <loc>https://outboundpantai.web.id/5-alasan-pantai-kondang-merak-lokasi-sempurna-corporate-gathering.html</loc>
+    <loc>https://outboundpantai.web.id/5-alasan-pantai-kondang-merak-lokasi-sempurna-corporate-gathering</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/7-ide-fun-games-seru-untuk-membangun-kekompakan-tim-anda-di-pantai.html</loc>
+    <loc>https://outboundpantai.web.id/7-ide-fun-games-seru-untuk-membangun-kekompakan-tim-anda-di-pantai</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/menikmati-bbq-seafood-malam-keakraban.html</loc>
+    <loc>https://outboundpantai.web.id/menikmati-bbq-seafood-malam-keakraban</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/persiapan-penting-ldks-alam.html</loc>
+    <loc>https://outboundpantai.web.id/persiapan-penting-ldks-alam</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -111,14 +111,14 @@
 
   <!-- Halaman Legal -->
   <url>
-    <loc>https://outboundpantai.web.id/privacy.html</loc>
+    <loc>https://outboundpantai.web.id/privacy</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://outboundpantai.web.id/terms.html</loc>
+    <loc>https://outboundpantai.web.id/terms</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
