@@ -83,7 +83,40 @@
       "priceCurrency": "IDR",
       "price": "150000",
       "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2027-12-31"
+      "priceValidUntil": "2027-12-31",
+      "validFrom": "2024-01-01",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "ID",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "IDR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "ID"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "0",
+            "maxValue": "0",
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "0",
+            "maxValue": "0",
+            "unitCode": "DAY"
+          }
+        }
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -95,7 +128,17 @@
       "@type": "LocalBusiness",
       "name": "Outbound Pantai Kondang Merak",
       "telephone": "+6282211221909",
-      "url": "https://outboundpantai.web.id/"
+      "url": "https://outboundpantai.web.id/",
+      "image": "https://outboundpantai.web.id/assets/img/logo.webp",
+      "priceRange": "Rp150.000 - Rp650.000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pantai Kondang Merak",
+        "addressLocality": "Malang",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "61765",
+        "addressCountry": "ID"
+      }
     }
   }
   </script>

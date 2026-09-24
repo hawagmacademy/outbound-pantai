@@ -70,21 +70,53 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "@id": "https://outboundpantai.web.id/tentang-kami.html#webpage",
-    "name": "Tentang Provider Outbound Pantai Kondang Merak",
-    "description": "Profil lengkap, dedikasi, visi, dan legalitas tim fasilitator outbound pantai di Pantai Kondang Merak, Malang Selatan.",
-    "url": "https://outboundpantai.web.id/tentang-kami.html",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Outbound Pantai Kondang Merak",
-      "url": "https://outboundpantai.web.id/",
-      "logo": "https://outboundpantai.web.id/assets/img/logo.webp",
-      "sameAs": [
-        "https://www.instagram.com/",
-        "https://www.facebook.com/"
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://outboundpantai.web.id/tentang-kami.html#webpage",
+        "name": "Tentang Provider Outbound Pantai Kondang Merak",
+        "description": "Profil lengkap, dedikasi, visi, dan legalitas tim fasilitator outbound pantai di Pantai Kondang Merak, Malang Selatan.",
+        "url": "https://outboundpantai.web.id/tentang-kami.html",
+        "mainEntity": {
+          "@type": "LocalBusiness",
+          "name": "Outbound Pantai Kondang Merak",
+          "url": "https://outboundpantai.web.id/",
+          "logo": "https://outboundpantai.web.id/assets/img/logo.webp",
+          "image": "https://outboundpantai.web.id/assets/img/logo.webp",
+          "telephone": "+6282211221909",
+          "priceRange": "Rp150.000 - Rp650.000",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pantai Kondang Merak",
+            "addressLocality": "Malang",
+            "addressRegion": "Jawa Timur",
+            "postalCode": "61765",
+            "addressCountry": "ID"
+          },
+          "sameAs": [
+            "https://www.instagram.com/",
+            "https://www.facebook.com/"
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://outboundpantai.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tentang Kami",
+            "item": "https://outboundpantai.web.id/tentang-kami.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
