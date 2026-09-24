@@ -140,9 +140,79 @@
   }
   </script>
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></noscript>
+  <link href="assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="assets/css/main.css" rel="stylesheet"></noscript>
 
+  <style id="critical-css">*,*::before,*::after{box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;font-family:var(--default-font,"Poppins",sans-serif);background:#fff;color:#212529;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+.d-flex{display:flex!important}
+.d-inline-flex{display:inline-flex!important}
+.d-block{display:block!important}
+.align-items-center{align-items:center!important}
+.justify-content-between{justify-content:space-between!important}
+.justify-content-center{justify-content:center!important}
+.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}
+@media(min-width:576px){.container{max-width:540px}}
+@media(min-width:768px){.container{max-width:720px}}
+@media(min-width:992px){.container{max-width:960px}}
+@media(min-width:1200px){.container{max-width:1140px}}
+@media(min-width:1400px){.container{max-width:1320px}}
+.container-fluid,.container-xl{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}
+@media(min-width:1200px){.container-xl{max-width:1140px}}
+.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1*var(--bs-gutter-y));margin-right:calc(-.5*var(--bs-gutter-x));margin-left:calc(-.5*var(--bs-gutter-x))}
+.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)*.5);padding-left:calc(var(--bs-gutter-x)*.5);margin-top:var(--bs-gutter-y)}
+.col-lg-6{flex:0 0 auto}
+@media(min-width:992px){.col-lg-6{width:50%}}
+.position-relative{position:relative!important}
+.position-absolute{position:absolute!important}
+.fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}
+.w-100{width:100%!important}
+.h-100{height:100%!important}
+.me-auto{margin-right:auto!important}
+.me-xl-0{margin-right:0!important}
+.fw-bold{font-weight:700!important}
+.rounded-pill{border-radius:var(--bs-border-radius-pill)!important}
+.gap-2{gap:.5rem!important}
+.gap-3{gap:1rem!important}
+.flex-wrap{flex-wrap:wrap!important}
+:root{--accent-color:#008cad;--heading-color:#0c2a4a;--default-color:#444;--default-font:"Poppins",sans-serif;--heading-font:"Raleway",sans-serif;--bs-border-radius:.375rem;--bs-border-radius-lg:.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-pill:50rem;--bs-gutter-x:1.5rem;--bs-gutter-y:0}
+.header{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.08);transition:all .3s ease;border-bottom:1px solid rgba(0,140,173,.08)}
+.header .logo{display:flex;align-items:center;gap:10px}
+.header .logo img{width:40px;height:40px;border-radius:8px;flex-shrink:0}
+.header .logo .sitename{font-family:var(--heading-font);font-weight:800;font-size:1.15rem;color:var(--heading-color);letter-spacing:-.3px;margin:0}
+.header-container{padding:12px 20px}
+.navmenu ul{margin:0;padding:0;list-style:none;display:flex;align-items:center;gap:4px}
+.navmenu a{font-size:.9rem;font-weight:600;color:#555;padding:7px 14px;border-radius:8px;transition:all .2s}
+.navmenu a:hover,.navmenu .active{color:var(--accent-color);background:rgba(0,140,173,.08)}
+.btn-getstarted{background:linear-gradient(135deg,var(--accent-color),#00aacc);color:#fff;padding:9px 22px;border-radius:50px;font-weight:700;font-size:.85rem;transition:all .3s}
+.btn-getstarted:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,140,173,.35);color:#fff}
+.mobile-nav-toggle{display:none;font-size:1.4rem;color:var(--heading-color);cursor:pointer}
+@media(max-width:1199px){.mobile-nav-toggle{display:block}}
+.home-hero{background:linear-gradient(160deg,#0a1628 0%,#0c2a4a 40%,#0d3d6e 70%,#0d5280 100%);min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.home-hero::before{content:"";position:absolute;inset:0;background:url("assets/img/hero/outbound-pantai-kondang-merak.webp") center/cover no-repeat;opacity:.12;z-index:0}
+.home-hero-content{position:relative;z-index:1}
+.hero-row{min-height:calc(100vh - 80px)}
+.home-hero h1{font-family:var(--heading-font);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:1rem}
+.home-hero h1 span{color:#7ff3ff}
+.home-hero .lead{color:rgba(255,255,255,.8);font-size:1.05rem;line-height:1.7}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(127,243,255,.15);border:1px solid rgba(127,243,255,.3);color:#7ff3ff;padding:6px 16px;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:1.2rem}
+.hero-stats-bar{display:flex;gap:24px}
+.hero-stat-item{text-align:center}
+.hero-stat-num{display:block;font-size:1.4rem;font-weight:800;color:#7ff3ff;font-family:var(--heading-font)}
+.hero-stat-label{font-size:.72rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px}
+.hero-image-wrap{position:relative;display:flex;justify-content:center}
+.hero-img-main{border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.4),0 10px 30px rgba(0,140,173,.3);width:100%;max-width:540px;object-fit:cover;aspect-ratio:3/2}
+.hero-img-badge{position:absolute;bottom:-20px;left:20px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.badge-icon-circle{width:40px;height:40px;background:linear-gradient(135deg,var(--accent-color),#00bfff);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0}
+.badge-text-big{font-weight:700;font-size:.9rem;color:var(--heading-color)}
+.badge-text-small{font-size:.75rem;color:#888}
+@media(max-width:991px){.home-hero{min-height:auto;padding:100px 0 60px}.hero-row{min-height:auto;gap:40px}.hero-image-wrap{margin-top:20px}}
+@media(max-width:576px){.home-hero h1{font-size:1.7rem}.hero-stats-bar{gap:16px}.hero-stat-num{font-size:1.1rem}}</style>
 </head>
 
 <body class="tour-detail-page">
