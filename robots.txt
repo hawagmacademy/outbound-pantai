@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow system or script folders
+Disallow: /forms/
+
+# Sitemap location
+Sitemap: https://outboundpantai.web.id/sitemap.xml
