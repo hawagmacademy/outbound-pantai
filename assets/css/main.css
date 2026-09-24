@@ -11188,7 +11188,7 @@ main>section:last-child:not(#call-to-action) {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url('../img/hero/outbound-pantai-kondang-merak.webp') center center / cover no-repeat fixed;
+  background: url('../img/hero/outbound-pantai-kondang-merak.webp') center center / cover no-repeat;
   overflow: hidden;
 }
 
@@ -12289,7 +12289,6 @@ main>section:last-child:not(#call-to-action) {
   text-align: center;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   z-index: 1;
   overflow: hidden;
 }
