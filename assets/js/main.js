@@ -12,15 +12,34 @@
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  const selectBody = document.querySelector('body');
+  const selectHeader = document.querySelector('#header');
+  let isScrolling = false;
+
+  function handleScroll() {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        
+        // toggleScrolled logic
+        if (selectHeader && (selectHeader.classList.contains('scroll-up-sticky') || selectHeader.classList.contains('sticky-top') || selectHeader.classList.contains('fixed-top'))) {
+          scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+        }
+
+        // toggleScrollTop logic
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        if (scrollTopBtn) {
+          scrollY > 100 ? scrollTopBtn.classList.add('active') : scrollTopBtn.classList.remove('active');
+        }
+        
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
   }
 
-  document.addEventListener('scroll', toggleScrolled, { passive: true });
-  window.addEventListener('load', toggleScrolled);
+  document.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('load', handleScroll);
 
   /**
    * Mobile nav toggle
@@ -88,7 +107,9 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    preloader.remove();
+    window.addEventListener('load', () => {
+      preloader.remove();
+    });
   }
 
   /**
@@ -96,11 +117,6 @@
    */
   let scrollTop = document.querySelector('.scroll-top');
 
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -108,9 +124,6 @@
       behavior: 'smooth'
     });
   });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop, { passive: true });
 
   /**
    * Floating WhatsApp button
@@ -139,12 +152,13 @@
       });
     }
   }
-  window.addEventListener('load', aosInit);
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    aosInit();
-  } else {
-    document.addEventListener('DOMContentLoaded', aosInit);
-  }
+  window.addEventListener('load', () => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(aosInit);
+    } else {
+      setTimeout(aosInit, 100);
+    }
+  });
 
   /**
    * Initiate Pure Counter
