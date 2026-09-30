@@ -19,7 +19,6 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled, { passive: true });
   window.addEventListener('load', toggleScrolled);
 
   /**
@@ -103,16 +102,31 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop, { passive: true });
+  
+  // Combined and optimized scroll listener
+  let isScrolling = false;
+  document.addEventListener('scroll', () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        toggleScrolled();
+        toggleScrollTop();
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  }, { passive: true });
 
   /**
    * Floating WhatsApp button
@@ -141,12 +155,11 @@
       });
     }
   }
-  window.addEventListener('load', aosInit);
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    aosInit();
-  } else {
-    document.addEventListener('DOMContentLoaded', aosInit);
-  }
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      window.requestAnimationFrame(aosInit);
+    }, 100);
+  });
 
   /**
    * Initiate Pure Counter
