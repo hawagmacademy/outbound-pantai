@@ -156,6 +156,37 @@
   /**
    * Init swiper sliders
    */
+  let swiperLoaded = false;
+  let swiperLoading = false;
+
+  function loadSwiper(callback) {
+    if (swiperLoaded) {
+      callback();
+      return;
+    }
+    if (swiperLoading) {
+      document.addEventListener('swiperLoaded', callback);
+      return;
+    }
+    swiperLoading = true;
+
+    // Load CSS
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'assets/vendor/swiper/swiper-bundle.min.css';
+    document.head.appendChild(link);
+
+    // Load JS
+    let script = document.createElement('script');
+    script.src = 'assets/vendor/swiper/swiper-bundle.min.js';
+    script.onload = () => {
+      swiperLoaded = true;
+      document.dispatchEvent(new Event('swiperLoaded'));
+      callback();
+    };
+    document.body.appendChild(script);
+  }
+
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
       let config = JSON.parse(
@@ -165,12 +196,14 @@
       let observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            requestAnimationFrame(() => {
-              if (swiperElement.classList.contains("swiper-tab")) {
-                initSwiperWithCustomPagination(swiperElement, config);
-              } else {
-                new Swiper(swiperElement, config);
-              }
+            loadSwiper(() => {
+              requestAnimationFrame(() => {
+                if (swiperElement.classList.contains("swiper-tab")) {
+                  initSwiperWithCustomPagination(swiperElement, config);
+                } else {
+                  new Swiper(swiperElement, config);
+                }
+              });
             });
             obs.unobserve(swiperElement);
           }
