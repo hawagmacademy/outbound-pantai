@@ -12,34 +12,15 @@
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
-  const selectBody = document.querySelector('body');
-  const selectHeader = document.querySelector('#header');
-  let isScrolling = false;
-
-  function handleScroll() {
-    if (!isScrolling) {
-      window.requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        
-        // toggleScrolled logic
-        if (selectHeader && (selectHeader.classList.contains('scroll-up-sticky') || selectHeader.classList.contains('sticky-top') || selectHeader.classList.contains('fixed-top'))) {
-          scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-        }
-
-        // toggleScrollTop logic
-        const scrollTopBtn = document.querySelector('.scroll-top');
-        if (scrollTopBtn) {
-          scrollY > 100 ? scrollTopBtn.classList.add('active') : scrollTopBtn.classList.remove('active');
-        }
-        
-        isScrolling = false;
-      });
-      isScrolling = true;
-    }
+  function toggleScrolled() {
+    const selectBody = document.querySelector('body');
+    const selectHeader = document.querySelector('#header');
+    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('load', handleScroll);
+  document.addEventListener('scroll', toggleScrolled, { passive: true });
+  window.addEventListener('load', toggleScrolled);
 
   /**
    * Mobile nav toggle
@@ -117,6 +98,11 @@
    */
   let scrollTop = document.querySelector('.scroll-top');
 
+  function toggleScrollTop() {
+    if (scrollTop) {
+      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+    }
+  }
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -124,6 +110,9 @@
       behavior: 'smooth'
     });
   });
+
+  window.addEventListener('load', toggleScrollTop);
+  document.addEventListener('scroll', toggleScrollTop, { passive: true });
 
   /**
    * Floating WhatsApp button
@@ -152,13 +141,12 @@
       });
     }
   }
-  window.addEventListener('load', () => {
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(aosInit);
-    } else {
-      setTimeout(aosInit, 100);
-    }
-  });
+  window.addEventListener('load', aosInit);
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    aosInit();
+  } else {
+    document.addEventListener('DOMContentLoaded', aosInit);
+  }
 
   /**
    * Initiate Pure Counter
@@ -174,11 +162,21 @@
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
+      let observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => {
+              if (swiperElement.classList.contains("swiper-tab")) {
+                initSwiperWithCustomPagination(swiperElement, config);
+              } else {
+                new Swiper(swiperElement, config);
+              }
+            });
+            obs.unobserve(swiperElement);
+          }
+        });
+      }, { rootMargin: '200px' });
+      observer.observe(swiperElement);
     });
   }
 
